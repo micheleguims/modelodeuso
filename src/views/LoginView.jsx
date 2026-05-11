@@ -1,52 +1,82 @@
 import React from 'react';
-import { Building2, AlertCircle } from 'lucide-react';
+import { Building2, AlertCircle, LockKeyhole } from 'lucide-react';
 
 export default function LoginView({ handleLogin, loginError, loginUser, setLoginUser, loginPass, setLoginPass }) {
   return (
-    <div className="min-h-screen bg-slate-100 flex items-center justify-center p-4">
-      <div className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md">
+    <div className="min-h-screen bg-[#f0f4f8] flex items-center justify-center p-4">
+      <div className="bg-white p-8 rounded-3xl shadow-2xl w-full max-w-md border border-[#e2e8f0]">
+        
+        {/* Cabeçalho do Login */}
         <div className="text-center mb-8">
-          <div className="bg-blue-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 text-white">
-            <Building2 size={32} />
+          <div className="bg-[#13335a] w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-4 text-[#66b6e3] shadow-lg shadow-[#13335a]/20">
+            <Building2 size={40} />
           </div>
-          <h1 className="text-2xl font-bold text-slate-800">SME Portal Login</h1>
-          <p className="text-slate-500 mt-2">Acesso Nível Central e Coordenadorias</p>
+          <h1 className="text-2xl font-black text-[#13335a] tracking-tight uppercase">SME Portal Login</h1>
+          <p className="text-slate-500 mt-2 font-medium">Acesso Nível Central e Coordenadorias</p>
         </div>
         
-        <form onSubmit={handleLogin} className="space-y-4">
+        <form onSubmit={handleLogin} className="space-y-5">
+          {/* Mensagem de Erro com o seu Vermelho */}
           {loginError && (
-            <div className="p-3 bg-rose-50 text-rose-600 rounded-lg text-sm flex items-center gap-2">
-              <AlertCircle size={16} /> {loginError}
+            <div className="p-3 bg-[#ff6666]/10 text-[#ff6666] border border-[#ff6666]/20 rounded-xl text-sm flex items-center gap-2 animate-in slide-in-from-top-2">
+              <AlertCircle size={18} /> 
+              <span className="font-bold">{loginError}</span>
             </div>
           )}
+
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">Usuário</label>
+            <label className="block text-xs font-bold text-[#13335a] mb-2 uppercase tracking-wider">Usuário</label>
             <input 
               type="text" 
+              required
               value={loginUser}
               onChange={e => setLoginUser(e.target.value)}
-              className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
-              placeholder="admin ou usercre1"
+              className="w-full px-4 py-3 bg-[#f0f4f8]/50 border border-[#e2e8f0] rounded-xl focus:ring-2 focus:ring-[#66b6e3] focus:border-[#66b6e3] outline-none transition-all text-[#13335a] font-medium"
+              placeholder="Ex: admin ou usercre1"
             />
           </div>
+
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">Senha</label>
-            <input 
-              type="password" 
-              value={loginPass}
-              onChange={e => setLoginPass(e.target.value)}
-              className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
-              placeholder="123"
-            />
+            <label className="block text-xs font-bold text-[#13335a] mb-2 uppercase tracking-wider">Senha</label>
+            <div className="relative">
+              <input 
+                type="password" 
+                required
+                value={loginPass}
+                onChange={e => setLoginPass(e.target.value)}
+                className="w-full px-4 py-3 bg-[#f0f4f8]/50 border border-[#e2e8f0] rounded-xl focus:ring-2 focus:ring-[#66b6e3] focus:border-[#66b6e3] outline-none transition-all text-[#13335a] font-medium"
+                placeholder="••••••••"
+              />
+              <LockKeyhole size={18} className="absolute right-4 top-3.5 text-slate-400" />
+            </div>
           </div>
-          <button type="submit" className="w-full bg-blue-600 text-white font-medium py-2 rounded-lg hover:bg-blue-700 transition-colors mt-4">
+
+          <button 
+            type="submit" 
+            className="w-full bg-[#13335a] text-white font-bold py-4 rounded-xl hover:bg-[#13335a]/90 hover:shadow-lg transition-all mt-4 uppercase tracking-widest text-sm shadow-md"
+          >
             Entrar no Sistema
           </button>
-          <div className="text-xs text-slate-400 text-center mt-4 space-y-1">
-            <p>Dica: <b>admin / 123</b> para acesso total</p>
-            <p><b>usercre1 / 123</b> para acesso CRE 01</p>
+
+          {/* Dicas de Acesso com estilo mais discreto */}
+          <div className="pt-6 border-t border-[#e2e8f0] mt-6">
+            <div className="bg-[#f0f4f8] p-4 rounded-2xl space-y-2 border border-[#e2e8f0]">
+              <p className="text-[10px] text-slate-400 font-bold uppercase text-center mb-1">Credenciais de Teste (Piloto)</p>
+              <div className="flex justify-between text-xs">
+                <span className="text-slate-500 font-medium text-transform: lowercase">admin / 123</span>
+                <span className="text-[#13335a] font-bold uppercase tracking-tighter">Acesso Total</span>
+              </div>
+              <div className="flex justify-between text-xs">
+                <span className="text-slate-500 font-medium text-transform: lowercase">usercre1 / 123</span>
+                <span className="text-[#66b6e3] font-bold uppercase tracking-tighter">Acesso CRE 01</span>
+              </div>
+            </div>
           </div>
         </form>
+
+        <p className="text-center text-[10px] text-slate-400 mt-8 font-medium uppercase tracking-widest">
+          Secretaria Municipal de Educação — SME
+        </p>
       </div>
     </div>
   );
