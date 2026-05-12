@@ -5,10 +5,10 @@ import {
 
 export default function InfoView() {
   return (
-    // 1. Adicionado max-w-4xl mx-auto para centralizar e limitar a largura da página
+    // max-w-4xl mx-auto centraliza e limita a largura da página
     <div className="space-y-8 animate-in fade-in duration-700 pb-12 max-w-4xl mx-auto">
       
-      {/* Cabeçalho de Impacto */}
+      {/* Cabeçalho em Destaque */}
       <div className="bg-[#13335a] rounded-3xl p-8 text-white shadow-lg border-b-4 border-[#66b6e3]">
         <h2 className="text-3xl font-bold mb-2">Modernização Tecnológica SME</h2>
         <p className="text-white/80 text-lg max-w-2xl">
@@ -34,9 +34,9 @@ export default function InfoView() {
           <h3 className="text-xl font-bold text-[#13335a]">Pilotos Ativos na Secretaria</h3>
         </div>
         
-        {/* 2. Alterado para colocar os dois cartões lado a lado em ecrãs grandes */}
+        {/* Cartões lado a lado em ecrãs grandes */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Caso Subex (Destaque Azul Claro) */}
+          {/* Caso Subex */}
           <div className="border-l-4 border-[#66b6e3] pl-4 py-3 bg-[#f0f4f8] rounded-r-lg">
             <h4 className="font-bold text-[#13335a] text-lg">Subex — Gestão de Notas Fiscais</h4>
             <p className="text-sm text-slate-500 mb-2 font-medium">Ferramentas: React + Servidores Internos + IA</p>
@@ -46,8 +46,8 @@ export default function InfoView() {
             </p>
           </div>
 
-          {/* Caso CTRH (Destaque Vermelho) */}
-          <div className="border-l-4 border-[#ff6666] pl-4 py-3 bg-[#f0f4f8] rounded-r-lg">
+          {/* Caso CTRH */}
+          <div className="border-l-4 border-[#66b6e3] pl-4 py-3 bg-[#f0f4f8] rounded-r-lg">
             <h4 className="font-bold text-[#13335a] text-lg">CTRH — Avaliação de Lideranças</h4>
             <p className="text-sm text-slate-500 mb-2 font-medium">Ferramentas: React + Firebase</p>
             <p className="text-slate-600 text-sm">
@@ -102,7 +102,7 @@ export default function InfoView() {
         <h3 className="text-[#13335a] font-bold mb-4 flex items-center gap-2">
           <Globe size={20} className="text-[#66b6e3]" /> Recursos do Piloto
         </h3>
-        {/* 3. Colocado os botões lado a lado */}
+        {/* Botões lado a lado */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <a href="https://modelodeuso.web.app/" target="_blank" rel="noreferrer" className="flex items-center justify-center p-3 bg-[#13335a] rounded-xl text-sm font-medium text-white hover:bg-[#13335a]/90 transition-all shadow-md">
             Acessar Site do Modelo

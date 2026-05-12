@@ -92,7 +92,7 @@ export default function DashboardView({ role, creFilter, setCreFilter, filteredR
           </div>
         </div>
 
-        {/* Aprovados - Verde (Mantido para padrão de sucesso) */}
+        {/* Aprovados - Verde */}
         <div className="bg-white p-6 rounded-xl border-b-4 border-emerald-500 shadow-sm flex items-center gap-4">
           <div className="p-4 bg-emerald-50 text-emerald-600 rounded-lg"><CheckCircle2 size={24} /></div>
           <div>

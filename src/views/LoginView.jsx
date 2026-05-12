@@ -16,7 +16,7 @@ export default function LoginView({ handleLogin, loginError, loginUser, setLogin
         </div>
         
         <form onSubmit={handleLogin} className="space-y-5">
-          {/* Mensagem de Erro com o seu Vermelho */}
+          {/* Mensagem de Erro (Vermelho) */}
           {loginError && (
             <div className="p-3 bg-[#ff6666]/10 text-[#ff6666] border border-[#ff6666]/20 rounded-xl text-sm flex items-center gap-2 animate-in slide-in-from-top-2">
               <AlertCircle size={18} /> 
@@ -58,7 +58,7 @@ export default function LoginView({ handleLogin, loginError, loginUser, setLogin
             Entrar no Sistema
           </button>
 
-          {/* Dicas de Acesso com estilo mais discreto */}
+          {/* Dicas de Acesso */}
           <div className="pt-6 border-t border-[#e2e8f0] mt-6">
             <div className="bg-[#f0f4f8] p-4 rounded-2xl space-y-2 border border-[#e2e8f0]">
               <p className="text-[10px] text-slate-400 font-bold uppercase text-center mb-1">Credenciais de Teste (Piloto)</p>

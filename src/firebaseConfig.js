@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth"; // Já preparando para o login
 
-// Substitua pelas chaves do seu projeto (Configurações do Projeto > Geral > Seus aplicativos)
+// Chaves do Projeto Firebase (usando variáveis de ambiente para segurança)
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,

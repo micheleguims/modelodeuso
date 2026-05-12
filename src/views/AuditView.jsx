@@ -13,7 +13,7 @@ export default function AuditView({ logs }) {
         </div>
       </div>
 
-      {/* Caixa do Terminal de Logs - Fundo Azul Escuro */}
+      {/* Caixa do Terminal de Logs*/}
       <div className="bg-[#13335a] rounded-xl shadow-xl border border-[#13335a] overflow-hidden font-mono text-sm">
         
         {/* Cabeçalho do Terminal */}

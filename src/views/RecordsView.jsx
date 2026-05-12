@@ -47,7 +47,7 @@ export default function RecordsView({ role, creFilter, setCreFilter, filteredRec
       <div className="bg-white border border-[#e2e8f0] rounded-xl shadow-sm overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm text-slate-600">
-            {/* Cabeçalho da Tabela - Usando Azul Escuro */}
+            {/* Cabeçalho da Tabela - Azul Escuro */}
             <thead className="bg-[#f0f4f8] border-b-2 border-[#13335a] text-[#13335a] uppercase text-xs font-bold">
               <tr>
                 <th className="px-6 py-4">ID / Origem</th>

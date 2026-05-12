@@ -38,7 +38,7 @@ export default function App() {
   const [editingId, setEditingId] = useState(null);
   const [newRecord, setNewRecord] = useState({ title: '', type: 'pdf', status: 'Pendente', fileUrl: null, fileName: null });
 
-  // Escuta os registros do Firebase em tempo real
+  // Lê os registros do Firebase em tempo real
   useEffect(() => {
     const unsubscribe = onSnapshot(collection(db, 'registros'), (snapshot) => {
       const dadosConvertidos = snapshot.docs.map(doc => ({
@@ -51,7 +51,7 @@ export default function App() {
     return () => unsubscribe();
   }, []);
 
-  // Escuta os logs do Firebase em tempo real
+  // Lê os logs do Firebase em tempo real
   useEffect(() => {
     const unsubscribeLogs = onSnapshot(collection(db, 'logs'), (snapshot) => {
       const logsConvertidos = snapshot.docs.map(doc => ({
@@ -194,14 +194,13 @@ export default function App() {
             <Building2 size={24} />
           </div>
           <span className="font-bold text-xl tracking-tight">SME Admin Portal</span>
-          {/* Badge "Modo de Produção" modernizado */}
           <span className="px-2 py-0.5 bg-[#66b6e3]/20 text-[#66b6e3] text-xs rounded-full font-bold ml-2 border border-[#66b6e3]/30 hidden md:inline-block uppercase tracking-wider">
-            Modo de Produção
+            Modo de Testes
           </span>
         </div>
         
         <div className="flex items-center gap-4">
-          {/* Identificação do utilizador com um fundo escurecido elegante */}
+          {/* Identificação do utilizador com um fundo escurecido */}
           <div className="flex items-center gap-2 bg-black/20 px-4 py-2 rounded-xl border border-[#66b6e3]/30">
             <UserCircle size={20} className="text-[#66b6e3]" />
             <span className="text-sm font-bold text-white uppercase tracking-tight">
